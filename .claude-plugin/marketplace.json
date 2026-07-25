@@ -1,0 +1,14 @@
+{
+  "name": "conventional-commits-claude",
+  "owner": {
+    "name": "AndyAWD",
+    "url": "https://github.com/AndyAWD"
+  },
+  "plugins": [
+    {
+      "name": "conventional-commits-claude",
+      "source": ".",
+      "description": "依慣例式提交規範產生 git commit，整合 Git Flow。"
+    }
+  ]
+}

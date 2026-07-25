@@ -21,7 +21,7 @@
       "homepage": "https://github.com/AndyAWD/conventional-commits-claude",
       "license": "MIT",
       "keywords": ["conventional-commits", "git-flow", "commit", "zh-hant"],
-      "skills": ["./skills/conventional-commits"]
+      "skills": ["./skills/commit"]
     }
   ]
 }

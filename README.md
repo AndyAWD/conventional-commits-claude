@@ -37,14 +37,30 @@ claude plugin install github:AndyAWD/conventional-commits-claude
 
 ## 使用方式
 
-在 Claude Code 對話中對 Claude 說：
+有兩種方式可以啟動：
+
+### 方式一：斜線指令（明確觸發）
+
+在 Claude Code 對話輸入：
+
+```
+/conventional-commits-claude:commit
+```
+
+支援 tab 自動補全，實務上打 `/co` 加 tab 就會出現這個指令。
+
+### 方式二：自然語言（讓 Claude 自動判斷）
+
+對 Claude 說任一句話：
 
 - 「幫我 commit」
 - 「整理提交」
 - 「拆 commit」
 - 「conventional commit 一下」
 
-Claude 會自動：
+---
+
+兩種方式最終行為相同，Claude 會自動：
 
 1. 執行 `git add -A`（含未追蹤檔案）
 2. 分析 staged 內容，判斷是否需要拆分成多個 commit

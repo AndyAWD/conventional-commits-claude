@@ -1,5 +1,5 @@
 ---
-name: conventional-commits
+name: commit
 description: 依照慣例式提交（Conventional Commits）v1.0.0 規範自動產生 git commit。分析目前 workspace 變更，若包含多個獨立任務會自動拆分成多個 commit。整合 Git Flow 分支策略（main/develop 禁止直接提交，自動建 feature/* 或 hotfix/*）。每個 commit 的 author 沿用 git config，committer 設為 claude <81847+claude@users.noreply.github.com>（連結至 GitHub @claude），並在 body 尾端加上帶當前模型名的 Co-Authored-By trailer。無論使用者說「commit」「提交」「幫我 commit」「conventional commit」「拆 commit」「整理提交」等相關字眼，只要涉及建立 git commit 就使用此 skill。
 ---
 
@@ -41,7 +41,7 @@ git add -A
 執行 skill 內附的 analyze 腳本：
 
 ```bash
-node ${CLAUDE_PLUGIN_ROOT}/skills/conventional-commits/scripts/analyze.js
+node ${CLAUDE_PLUGIN_ROOT}/skills/commit/scripts/analyze.js
 ```
 
 腳本輸出：當前分支、`git status --short`、`git diff --cached --stat`、staged 完整 diff、最近 10 個 commit、所有分支清單。
@@ -75,9 +75,9 @@ node ${CLAUDE_PLUGIN_ROOT}/skills/conventional-commits/scripts/analyze.js
 範例：`使用者登入`、`api-refactor`、`修正登入崩潰`、`null-pointer`
 
 ```bash
-node ${CLAUDE_PLUGIN_ROOT}/skills/conventional-commits/scripts/branch-guard.js feature 使用者登入
+node ${CLAUDE_PLUGIN_ROOT}/skills/commit/scripts/branch-guard.js feature 使用者登入
 # 或
-node ${CLAUDE_PLUGIN_ROOT}/skills/conventional-commits/scripts/branch-guard.js hotfix 修正登入崩潰
+node ${CLAUDE_PLUGIN_ROOT}/skills/commit/scripts/branch-guard.js hotfix 修正登入崩潰
 ```
 
 **退出碼**：
@@ -128,7 +128,7 @@ node ${CLAUDE_PLUGIN_ROOT}/skills/conventional-commits/scripts/branch-guard.js h
 ```bash
 git reset                                  # 清空 staged（保留 working tree）
 git add <這個任務相關的檔案>              # 精準 stage
-node ${CLAUDE_PLUGIN_ROOT}/skills/conventional-commits/scripts/commit.js "<訊息>"
+node ${CLAUDE_PLUGIN_ROOT}/skills/commit/scripts/commit.js "<訊息>"
 ```
 
 `commit.js` 會用 `GIT_COMMITTER_NAME=claude` + `GIT_COMMITTER_EMAIL=81847+claude@users.noreply.github.com` 呼叫 `git commit`，author 沿用 git config。

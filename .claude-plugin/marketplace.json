@@ -4,11 +4,24 @@
     "name": "AndyAWD",
     "url": "https://github.com/AndyAWD"
   },
+  "metadata": {
+    "description": "依慣例式提交（Conventional Commits）v1.0.0 規範產生 git commit，整合 Git Flow 分支策略。",
+    "version": "0.1.0"
+  },
   "plugins": [
     {
       "name": "conventional-commits-claude",
-      "source": ".",
-      "description": "依慣例式提交規範產生 git commit，整合 Git Flow。"
+      "description": "依慣例式提交規範產生 git commit，整合 Git Flow（自動拆分多任務、Author 沿用 git config、Committer 為 GitHub @claude）。",
+      "source": "./",
+      "version": "0.1.0",
+      "author": {
+        "name": "AndyAWD",
+        "url": "https://github.com/AndyAWD"
+      },
+      "homepage": "https://github.com/AndyAWD/conventional-commits-claude",
+      "license": "MIT",
+      "keywords": ["conventional-commits", "git-flow", "commit", "zh-hant"],
+      "skills": ["./skills/conventional-commits"]
     }
   ]
 }

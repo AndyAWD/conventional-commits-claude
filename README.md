@@ -17,7 +17,10 @@
 
 ```bash
 claude plugin marketplace add AndyAWD/conventional-commits-claude
-claude plugin install conventional-commits-claude
+```
+
+```bash
+claude plugin install conventional-commits-claude@conventional-commits-claude
 ```
 
 ### 方式二：直接從 GitHub 安裝
